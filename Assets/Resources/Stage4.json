@@ -1,0 +1,26 @@
+{
+  "target": [
+    {"beat": 5,   "lane": 1, "notetype": 2},
+    {"beat": 10,  "lane": 3, "notetype": 1},
+    {"beat": 15,  "lane": 5, "notetype": 3},
+    {"beat": 20,  "lane": 1, "notetype": 1},
+    {"beat": 25,  "lane": 2, "notetype": 5},
+    {"beat": 30,  "lane": 3, "notetype": 1},
+    {"beat": 35,  "lane": 5, "notetype": 2},
+    {"beat": 40,  "lane": 1, "notetype": 3},
+    {"beat": 45,  "lane": 3, "notetype": 1},
+    {"beat": 50,  "lane": 5, "notetype": 1},
+    {"beat": 55,  "lane": 1, "notetype": 4},
+    {"beat": 60,  "lane": 3, "notetype": 1},
+    {"beat": 65,  "lane": 5, "notetype": 2},
+    {"beat": 70,  "lane": 1, "notetype": 1},
+    {"beat": 75,  "lane": 3, "notetype": 3},
+    {"beat": 80,  "lane": 5, "notetype": 1},
+    {"beat": 85,  "lane": 4, "notetype": 5},
+    {"beat": 90,  "lane": 1, "notetype": 1},
+    {"beat": 95,  "lane": 3, "notetype": 1},
+    {"beat": 100, "lane": 5, "notetype": 1},
+    {"beat": 105, "lane": 1, "notetype": 1},
+    {"beat": 110, "lane": 3, "notetype": 1}
+  ]
+}
