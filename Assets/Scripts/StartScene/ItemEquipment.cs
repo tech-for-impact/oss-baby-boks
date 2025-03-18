@@ -6,8 +6,8 @@ public class ItemEquipment : MonoBehaviour
 
     private void Update()
     {
-
-        for (int i = 0; i < GameManager.Instance.Item.Length; i++)
+        int minLength = Mathf.Min(GameManager.Instance.Item.Length, equipmentObjects.Length);
+        for (int i = 0; i < minLength; i++)
         {
             if (GameManager.Instance.Item[i])
             {

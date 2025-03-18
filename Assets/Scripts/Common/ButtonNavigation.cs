@@ -41,7 +41,7 @@ public class ButtonNavigation : MonoBehaviour
     // ========================================================
     void Start()
     {
-        currentIndex = 1;
+        currentIndex = 0;
         if (mainUIPanel != null)
             mainUIPanel.SetActive(true);
         HighlightMainButton(0);
@@ -112,6 +112,8 @@ public class ButtonNavigation : MonoBehaviour
         }
         if (currentIndex == -1)
             currentIndex = 0;
+
+        Debug.Log("index: " + currentIndex);
 
         // 새로운 인덱스를 계산하고 currentIndex에 반영
         int newIndex = currentIndex + direction;
@@ -290,7 +292,7 @@ public class ButtonNavigation : MonoBehaviour
     public void ClosePopup()
     {
         isPopupActive = false;
-        if (currentPopupPanel != null)
+        if (currentPopupPanel != null) 
             currentPopupPanel.SetActive(false);
         if (mainUIPanel != null)
             mainUIPanel.SetActive(true);
