@@ -71,6 +71,12 @@ public class PlayerController : MonoBehaviour
 
             HandleInput(qPressed, oPressed, aPressed, lPressed);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.Instance.TransitionToScene("2_Lobby");
+        }
+
         SmoothMove();
     }
 
@@ -266,6 +272,7 @@ public class PlayerController : MonoBehaviour
     // ========================================================
     private IEnumerator BounceBack()
     {
+        StageManager.instance.notesProcessed++;
         if (animateMoveRoutine != null)
         {
             StopCoroutine(animateMoveRoutine);
@@ -444,26 +451,45 @@ public class PlayerController : MonoBehaviour
                     stageManager?.AddScore();
                     PlayParticleAtPosition(currentPositionIndex);
                     break;
+
                 case 2:
                     if (!isScaling)
                     {
                         StageManager.instance.ResetCombo();
-                        StageManager.instance.TextByType("콰광");
+                        StageManager.instance.TempFuncTextByType("콰광");
+                    }
+                    else
+                    {
+                        StageManager.instance.notesProcessed++;
                     }
                     break;
+
                 case 3:
                     stageManager.IncreaseLife();
                     PlayParticleAtPosition(currentPositionIndex);
                     StageManager.instance.TextByType("회복");
                     break;
+
                 case 4:
-                    if (!isScaling) StartCoroutine(ChangeScaleTemporarily());
+                    if (!isScaling)
+                    { 
+                        StartCoroutine(ChangeScaleTemporarily());
+                    }
                     PlayParticleAtPosition(currentPositionIndex);
-                    StageManager.instance.TextByType("슈퍼");
+                    StageManager.instance.TextByType("슈퍼!");
                     break;
+
                 case 5:
-                    if (!isScaling) StartCoroutine(BounceBack());
+                    if (!isScaling)
+                    { 
+                        StartCoroutine(BounceBack());
+                    }
+                    else
+                    {
+                        StageManager.instance.notesProcessed++;
+                    }
                     break;
+
                 default:
                     Debug.LogWarning($"잘못된 노트 타입: {noteController.noteType}");
                     break;
